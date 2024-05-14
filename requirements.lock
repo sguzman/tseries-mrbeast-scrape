@@ -8,6 +8,11 @@
 #   with-sources: false
 
 -e file:.
+beautifulsoup4==4.12.3
+    # via bs4
+    # via mrbeast-subs
+bs4==0.0.2
+    # via mrbeast-subs
 certifi==2024.2.2
     # via requests
 charset-normalizer==3.3.2
@@ -16,5 +21,7 @@ idna==3.7
     # via requests
 requests==2.31.0
     # via mrbeast-subs
+soupsieve==2.5
+    # via beautifulsoup4
 urllib3==2.2.1
     # via requests
