@@ -11,7 +11,7 @@ logging.basicConfig(
     # Put level next
     format="%(levelname)s: %(asctime)s - %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S",
-    level=logging.DEBUG,
+    level=logging.WARN,
 )
 
 # store data in a file
