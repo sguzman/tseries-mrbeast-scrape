@@ -75,10 +75,17 @@ def main():
     # Clean whitespace
     # Remove quotes
     # Remove trailing whitespace
-    for d in data:
+    for i in range(len(data)):
+        d = data[i]
         d = d.strip()
         d = d.replace('"', "")
+        d = d[:-2]
+        data[i] = d
+
         logging.info(d)
+
+    # Clean first element
+    data[0] = data[0][data[0].index("2") :]
 
     # Print data to output (with csv format)
     print("Date,T-Series,MrBeast")
