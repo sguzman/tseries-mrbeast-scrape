@@ -11,7 +11,7 @@ logging.basicConfig(
     # Put level next
     format="%(levelname)s: %(asctime)s - %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S",
-    level=logging.WARN,
+    level=logging.DEBUG,
 )
 
 # store data in a file
@@ -55,7 +55,7 @@ def main():
     data: BeautifulSoup = BeautifulSoup(data, "html.parser")
 
     # Find by id
-    data = data.find("div", {"id": "videoviewsYTDYGraph"})
+    data = data.find("div", {"id": "subscribersYTDYGraph"})
 
     # Get script tag inside the div
     data = data.find("script")
