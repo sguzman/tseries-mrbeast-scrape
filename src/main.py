@@ -2,6 +2,7 @@ import atexit
 import logging
 import requests
 import shelve
+from typing import List
 from bs4 import BeautifulSoup
 
 # Set up logging with timestamp and level
@@ -10,7 +11,7 @@ logging.basicConfig(
     # Put level next
     format="%(levelname)s: %(asctime)s - %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S",
-    level=logging.DEBUG,
+    level=logging.WARN,
 )
 
 # store data in a file
@@ -68,8 +69,22 @@ def main():
     # And everything before the first occurrence of "", {"
     data = data.split(", {")[0]
 
-    # S
-    logging.info(data)
+    # Split on " + "
+    data: List[str] = data.split(" + ")
+
+    # Clean whitespace
+    # Remove quotes
+    # Remove trailing whitespace
+    for d in data:
+        d = d.strip()
+        d = d.replace('"', "")
+        logging.info(d)
+
+    # Print data to output (with csv format)
+    print("Date,T-Series,MrBeast")
+    for d in data:
+        print(d)
+
     logging.info("Ending main")
 
 
